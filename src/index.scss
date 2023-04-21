@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+$cell-width: 6rem;
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  min-height: 100vh;
+  background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+}
+
+.calculator-grid {
+  margin-inline: auto;
+  max-width: max-content;
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(4, minmax(1rem, $cell-width));
+  grid-template-rows: minmax(6rem, auto) repeat(5, minmax(1rem, $cell-width));
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: #26272a;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  color: white;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.prev-operand {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.current-operand {
+  font-size: 2.5rem;
+}
+
+.dot {
+  border-bottom-left-radius: 1rem;
+}
+
+.equal {
+  border-bottom-right-radius: 1rem;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  height: $cell-width;
+  background: #5c5c5c;
+  color: white;
+  border: 1px solid #26272a;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+
+  &:hover {
+    background-color: darken(#5c5c5c, 1);
+  }
+
+  &:focus {
+    background-color: darken(#5c5c5c, 0.5);
+  }
+}
+
+.operation-btn {
+  background: #fe9f0c;
+
+  &:hover {
+    background-color: rgba(#fe9f0c, 0.9);
+  }
+
+  &:focus {
+    background-color: rgba(#fe9f0c, 0.9);
+  }
+}
